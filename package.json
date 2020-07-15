@@ -1,0 +1,37 @@
+{
+  "name": "pahntom",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.10.4",
+    "@sentry/browser": "^5.19.1",
+    "@sentry/integrations": "^5.19.1",
+    "@stomp/stompjs": "^5.4.4",
+    "sockjs-client": "^1.4.0",
+    "vee-validate": "^3.3.7",
+    "vue": "^2.5.17",
+    "vue-resource": "^1.5.1",
+    "vue-router": "^3.3.4",
+    "vuetify": "^2.3.3",
+    "vuex": "^3.5.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.6.0",
+    "vue-loader": "^15.4.1",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.7",
+    "webpack-merge": "^5.0.9"
+  }
+}
