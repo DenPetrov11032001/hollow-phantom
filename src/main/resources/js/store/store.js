@@ -155,13 +155,13 @@ export default new Vuex.Store({
             if (comment.text !== '') {
                 const response = await commentApi.add(comment)
                 const data = await response.json()
-                const index = state.messages.findIndex(item => item.id === data.id)
+                const index = state.messages.find(item => item.id === data.id)
 
                 if (index > -1) {
                     commit('updateCommentMutation', data)
                 } else {
                     commit('addCommentMutation', data)
-                }
+               }
             }
         },
         async updateCommentAction({commit}, comment) {

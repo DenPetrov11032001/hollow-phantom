@@ -51,6 +51,7 @@
                     })
                 }
                 this.text = ''
+                this.id = null
             }
         }
     }
