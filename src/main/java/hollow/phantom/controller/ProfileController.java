@@ -48,7 +48,7 @@ public class ProfileController {
         return profileService.getSubscribers(channel);
     }
 
-    @PostMapping("change-subscribers/{subscriberId}")
+    @PostMapping("change-status/{subscriberId}")
     @JsonView(Views.IdName.class)
     public UserSubscription changeSubscriptionStatus(
             @AuthenticationPrincipal User channel,
