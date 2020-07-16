@@ -1,22 +1,30 @@
 <template>
     <v-app>
-        <v-app-bar app>
-            <v-toolbar-title>Phantom</v-toolbar-title>
+        <v-app-bar app class="header">
+            <v-toolbar-title class="header-title header-title__phantom" @click="showMessages">Phantom</v-toolbar-title>
             <v-btn text
                    v-if="profile"
-                   :disabled="$route.path === '/'"
                    @click="showMessages">
-                Messages
+                <div v-if="$route.path !== '/'" class="header-title">
+                    Messages
+                </div>
+                <div v-else class="header-title__disabled">
+                    Messages
+                </div>
             </v-btn>
             <v-spacer></v-spacer>
             <v-btn text
                    v-if="profile"
-                   :disabled="$route.path === '/user'"
                    @click="showProfile">
-                {{ profile.name }}
+                <div v-if="$route.path !== '/user'" class="header-title">
+                    {{ profile.name }}
+                </div>
+                <div v-else class="header-title__disabled">
+                    {{ profile.name }}
+                </div>
             </v-btn>
             <v-btn v-if="profile" icon href="/logout">
-                <v-icon>exit_to_app</v-icon>
+                <v-icon class="header-title">exit_to_app</v-icon>
             </v-btn>
         </v-app-bar>
         <v-main>
@@ -91,5 +99,16 @@
 </script>
 
 <style>
-
+    .header {
+        background-color: rgba(33, 33, 33, 0.98) !important;
+    }
+    .header-title {
+        color: azure !important;
+    }
+    .header-title__phantom {
+        margin-bottom: 3px;
+    }
+    .header-title__disabled {
+        color: #656565 !important;
+    }
 </style>

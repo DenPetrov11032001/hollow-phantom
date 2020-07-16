@@ -8,7 +8,7 @@
                 maxlength="255"
                 @keyup.enter="save"
         />
-        <v-btn @click="save" class="mx-2" fab dark color="grey" >
+        <v-btn @click="save" class="mx-2" fab dark color="F9212121" >
             <v-icon dark>send</v-icon>
         </v-btn>
     </v-layout>
