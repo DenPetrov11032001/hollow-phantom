@@ -8,7 +8,7 @@
         </v-subheader>
 
         <template
-                v-for="(item, index) in comments"
+                v-for="(item, index) in sortedComments"
         >
             <v-divider
                     v-if="index > 0"
@@ -42,6 +42,11 @@
             }
         },
         props: ['comments', 'messageId'],
+        computed: {
+            sortedComments() {
+                return (this.comments || []).sort((a, b) => (a.id - b.id))
+            }
+        },
         methods: {
             editComment(comment) {
                 this.comment = comment
