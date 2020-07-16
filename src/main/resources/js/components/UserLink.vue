@@ -1,6 +1,6 @@
 <template>
     <router-link
-            :to="`/user/${user.id}`"
+            :to="`/profile/${user.id}`"
             class="pr-3 without-line"
     >
         <v-avatar
