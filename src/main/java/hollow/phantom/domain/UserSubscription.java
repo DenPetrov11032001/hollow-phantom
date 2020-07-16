@@ -13,12 +13,13 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
+import java.io.Serializable;
 
 @Entity
 @Data
 @EqualsAndHashCode(of = "id")
 @ToString(of = "id")
-public class UserSubscription {
+public class UserSubscription implements Serializable {
     @EmbeddedId
     @JsonIgnore
     private UserSubscriptionId id;

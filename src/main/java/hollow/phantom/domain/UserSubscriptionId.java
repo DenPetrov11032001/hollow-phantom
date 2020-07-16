@@ -15,7 +15,6 @@ import java.io.Serializable;
 public class UserSubscriptionId implements Serializable {
     @JsonView(Views.Id.class)
     private String channelId;
-
     @JsonView(Views.Id.class)
     private String subscriberId;
 }
