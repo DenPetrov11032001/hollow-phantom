@@ -1,7 +1,7 @@
 <template>
     <v-container class="form">
         Необходимо авторизоваться через
-        <a href="/login">Google</a>
+        <a href="/login" id="login">Google</a>
     </v-container>
 </template>
 
