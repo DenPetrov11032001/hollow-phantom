@@ -1,4 +1,4 @@
-package hollow.phantom;
+package hollow.phantom.junit;
 
 import hollow.phantom.controller.MessageController;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package hollow.phantom;
+package hollow.phantom.junit;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -7,8 +7,9 @@
                 counter
                 maxlength="76"
                 @keyup.enter="save"
+                id="commentFrom"
         />
-        <v-btn @click="save" class="mt-3 ml-2">
+        <v-btn @click="save" class="mt-3 ml-2" id="sendComment">
             Add
         </v-btn>
     </v-layout>

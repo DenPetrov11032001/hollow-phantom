@@ -23,7 +23,7 @@
                     {{ profile.name }}
                 </div>
             </v-btn>
-            <v-btn v-if="profile" icon href="/logout">
+            <v-btn v-if="profile" icon href="/logout" id="logout">
                 <v-icon class="header-title">exit_to_app</v-icon>
             </v-btn>
         </v-app-bar>

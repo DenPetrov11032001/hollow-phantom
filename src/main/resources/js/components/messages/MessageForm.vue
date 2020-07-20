@@ -7,8 +7,9 @@
                 counter
                 maxlength="255"
                 @keyup.enter="save"
+                id="messageFrom"
         />
-        <v-btn @click="save" class="mx-2" fab dark color="F9212121" >
+        <v-btn @click="save" class="mx-2" fab dark color="F9212121" id="sendMessage">
             <v-icon dark>send</v-icon>
         </v-btn>
     </v-layout>

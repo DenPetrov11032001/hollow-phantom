@@ -6,8 +6,8 @@
                     size="48"
             ></user-link>
             <v-card-actions class="btn__float" v-if="isAuthor">
-                <v-btn value="Edit" @click="edit" small text rounded>Edit</v-btn>
-                <v-btn icon @click="del" small>
+                <v-btn value="Edit" @click="edit" small text rounded id="editMessage">Edit</v-btn>
+                <v-btn icon @click="del" small id="deleteMessage">
                     <v-icon class="btn__clear">clear</v-icon>
                 </v-btn>
             </v-card-actions>
