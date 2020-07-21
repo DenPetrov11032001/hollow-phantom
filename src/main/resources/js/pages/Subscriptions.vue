@@ -12,6 +12,7 @@
 
                     <v-btn
                             @click="changeSubscriptionStatus(item.subscriber.id)"
+                            id="approveSubscription"
                     >
                         {{item.active ? "Dismiss" : "Approve"}}
                     </v-btn>

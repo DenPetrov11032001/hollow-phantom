@@ -19,4 +19,14 @@ public class ProfileTest {
 
         chromeDriverUtil.quitFromDriver(driver);
     }
+
+    @Test
+    public void approveSubscription() throws InterruptedException {
+        ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
+        driver.get("http://hollow-phantom.herokuapp.com/subscriptions/109842214386392189829");
+
+        chromeDriverUtil.findAndClickElementById(driver, "approveSubscription");
+
+        chromeDriverUtil.quitFromDriver(driver);
+    }
 }
