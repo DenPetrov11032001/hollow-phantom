@@ -33,6 +33,18 @@ public class MessageTest {
     }
 
     @Test
+    public void sendSpecialSymbolsMessage() throws InterruptedException {
+        ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
+
+        char uniChar = '\u039A';
+        chromeDriverUtil.findAndSendElementById(driver, "messageForm", uniChar + " - omega");
+
+        chromeDriverUtil.findAndClickElementById(driver, "sendMessage");
+
+        chromeDriverUtil.quitFromDriver(driver);
+    }
+
+    @Test
     public void sendOverlongMessage() throws InterruptedException {
         ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
 

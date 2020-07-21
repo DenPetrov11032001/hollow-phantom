@@ -35,6 +35,18 @@ public class CommentTest {
     }
 
     @Test
+    public void sendSpecialSymbolsComment() throws InterruptedException {
+        ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
+
+        char uniChar = '\u038A';
+        chromeDriverUtil.findAndSendElementById(driver, "commentForm", uniChar + " - alpha");
+
+        chromeDriverUtil.findAndClickElementById(driver, "sendComment");
+
+        chromeDriverUtil.quitFromDriver(driver);
+    }
+
+    @Test
     public void sendOverlongComment() throws InterruptedException {
         ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
 
