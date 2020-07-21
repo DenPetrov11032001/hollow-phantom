@@ -34,6 +34,7 @@
                     <v-btn
                             v-if="!isMyProfile"
                             @click="changeSubscription"
+                            id="changeSubscription"
                     >
                         {{isISubscribed ? 'Unsubscribe' : 'Subscribe'}}
                     </v-btn>
