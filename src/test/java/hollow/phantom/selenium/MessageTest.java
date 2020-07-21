@@ -1,8 +1,6 @@
 package hollow.phantom.selenium;
 
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class MessageTest {
@@ -16,11 +14,9 @@ public class MessageTest {
     public void sendCorrectMessage() throws InterruptedException {
         ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
 
-        WebElement messageFrom = driver.findElement(By.id("messageFrom"));
-        messageFrom.sendKeys("Selenium test message");
+        chromeDriverUtil.findAndSendElementById(driver, "messageForm", "Selenium test message");
 
-        WebElement sendMessage = driver.findElement(By.id("sendMessage"));
-        sendMessage.click();
+        chromeDriverUtil.findAndClickElementById(driver, "sendMessage");
 
         chromeDriverUtil.quitFromDriver(driver);
     }
@@ -29,11 +25,9 @@ public class MessageTest {
     public void sendEmptyMessage() throws InterruptedException {
         ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
 
-        WebElement messageFrom = driver.findElement(By.id("messageFrom"));
-        messageFrom.sendKeys("");
+        chromeDriverUtil.findAndSendElementById(driver, "messageForm", "");
 
-        WebElement sendMessage = driver.findElement(By.id("sendMessage"));
-        sendMessage.click();
+        chromeDriverUtil.findAndClickElementById(driver, "sendMessage");
 
         chromeDriverUtil.quitFromDriver(driver);
     }
@@ -42,15 +36,13 @@ public class MessageTest {
     public void sendOverlongMessage() throws InterruptedException {
         ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
 
-        WebElement messageFrom = driver.findElement(By.id("messageFrom"));
-        messageFrom.sendKeys("Selenium test very long message" +
+        chromeDriverUtil.findAndSendElementById(driver, "messageForm", "Selenium test very long message" +
                 " Selenium test very long message Selenium test very long message" +
                 " Selenium test very long message Selenium test very long message Selenium " +
                 "test very long message Selenium test very long message Selenium test very" +
                 " long message Selenium test very long message Selenium test very long message");
 
-        WebElement sendMessage = driver.findElement(By.id("sendMessage"));
-        sendMessage.click();
+        chromeDriverUtil.findAndClickElementById(driver, "sendMessage");
 
         chromeDriverUtil.quitFromDriver(driver);
     }
@@ -59,14 +51,11 @@ public class MessageTest {
     public void editMessageCorrect() throws InterruptedException {
         ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
 
-        WebElement editMessage = driver.findElement(By.id("editMessage"));
-        editMessage.click();
+        chromeDriverUtil.findAndClickElementById(driver, "editMessage");
 
-        WebElement messageFrom = driver.findElement(By.id("messageFrom"));
-        messageFrom.sendKeys("Selenium test message edit!");
+        chromeDriverUtil.findAndSendElementById(driver, "messageForm", "Selenium test message edit!");
 
-        WebElement sendMessage = driver.findElement(By.id("sendMessage"));
-        sendMessage.click();
+        chromeDriverUtil.findAndClickElementById(driver, "sendMessage");
 
         chromeDriverUtil.quitFromDriver(driver);
     }
@@ -75,14 +64,11 @@ public class MessageTest {
     public void editMessageEmpty() throws InterruptedException {
         ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
 
-        WebElement editMessage = driver.findElement(By.id("editMessage"));
-        editMessage.click();
+        chromeDriverUtil.findAndClickElementById(driver, "editMessage");
 
-        WebElement messageFrom = driver.findElement(By.id("messageFrom"));
-        messageFrom.sendKeys("");
+        chromeDriverUtil.findAndSendElementById(driver, "messageForm", "");
 
-        WebElement sendMessage = driver.findElement(By.id("sendMessage"));
-        sendMessage.click();
+        chromeDriverUtil.findAndClickElementById(driver, "sendMessage");
 
         chromeDriverUtil.quitFromDriver(driver);
     }
@@ -91,18 +77,15 @@ public class MessageTest {
     public void editOverlongMessage() throws InterruptedException {
         ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
 
-        WebElement editMessage = driver.findElement(By.id("editMessage"));
-        editMessage.click();
+        chromeDriverUtil.findAndClickElementById(driver, "editMessage");
 
-        WebElement messageFrom = driver.findElement(By.id("messageFrom"));
-        messageFrom.sendKeys("Selenium test very long message" +
+        chromeDriverUtil.findAndSendElementById(driver, "messageForm", "Selenium test very long message" +
                 " Selenium test very long message Selenium test very long message" +
                 " Selenium test very long message Selenium test very long message Selenium " +
                 "test very long message Selenium test very long message Selenium test very" +
                 " long message Selenium test very long message Selenium test very long message");
 
-        WebElement sendMessage = driver.findElement(By.id("sendMessage"));
-        sendMessage.click();
+        chromeDriverUtil.findAndClickElementById(driver, "sendMessage");
 
         chromeDriverUtil.quitFromDriver(driver);
     }
@@ -111,8 +94,7 @@ public class MessageTest {
     public void deleteMessage() throws InterruptedException {
         ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
 
-        WebElement deleteMessage = driver.findElement(By.id("deleteMessage"));
-        deleteMessage.click();
+        chromeDriverUtil.findAndClickElementById(driver, "deleteMessage");
 
         chromeDriverUtil.quitFromDriver(driver);
     }

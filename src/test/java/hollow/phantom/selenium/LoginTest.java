@@ -16,8 +16,7 @@ public class LoginTest {
     public void testCorrectLogin() throws InterruptedException {
         ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
 
-        WebElement hrefToLogin = driver.findElement(By.id("login"));
-        hrefToLogin.click();
+        chromeDriverUtil.findAndClickElementById(driver, "login");
 
         WebElement searchBox = driver.findElement(By.id("identifierId"));
         searchBox.sendKeys("denis11032001");
@@ -33,8 +32,7 @@ public class LoginTest {
     public void testNotCorrectLogin() throws InterruptedException {
         ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
 
-        WebElement hrefToLogin = driver.findElement(By.id("login"));
-        hrefToLogin.click();
+        chromeDriverUtil.findAndClickElementById(driver, "login");
 
         WebElement searchBox = driver.findElement(By.id("identifierId"));
         searchBox.sendKeys("");
@@ -47,8 +45,7 @@ public class LoginTest {
     public void testLogout() throws InterruptedException {
         ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
 
-        WebElement logout = driver.findElement(By.id("logout"));
-        logout.click();
+        chromeDriverUtil.findAndClickElementById(driver, "logout");
 
         chromeDriverUtil.quitFromDriver(driver);
     }

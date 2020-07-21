@@ -16,11 +16,9 @@ public class CommentTest {
     public void sendCorrectComment() throws InterruptedException {
         ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
 
-        WebElement commentFrom = driver.findElement(By.id("commentFrom"));
-        commentFrom.sendKeys("Selenium test comment");
+        chromeDriverUtil.findAndSendElementById(driver, "commentForm", "Selenium test comment");
 
-        WebElement sendComment = driver.findElement(By.id("sendComment"));
-        sendComment.click();
+        chromeDriverUtil.findAndClickElementById(driver, "sendComment");
 
         chromeDriverUtil.quitFromDriver(driver);
     }
@@ -29,11 +27,9 @@ public class CommentTest {
     public void sendEmptyComment() throws InterruptedException {
         ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
 
-        WebElement commentFrom = driver.findElement(By.id("commentFrom"));
-        commentFrom.sendKeys("");
+        chromeDriverUtil.findAndSendElementById(driver, "commentForm", "");
 
-        WebElement sendComment = driver.findElement(By.id("sendComment"));
-        sendComment.click();
+        chromeDriverUtil.findAndClickElementById(driver, "sendComment");
 
         chromeDriverUtil.quitFromDriver(driver);
     }
@@ -42,12 +38,12 @@ public class CommentTest {
     public void sendOverlongComment() throws InterruptedException {
         ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
 
-        WebElement commentFrom = driver.findElement(By.id("commentFrom"));
-        commentFrom.sendKeys("Selenium test comment Selenium test comment Selenium test comment " +
-                "Selenium test comment Selenium test comment Selenium test comment Selenium test comment");
+        chromeDriverUtil.findAndSendElementById(driver, "commentForm", "Selenium test comment" +
+                " Selenium test comment Selenium test comment " +
+                " Selenium test comment Selenium test comment " +
+                " Selenium test comment Selenium test comment");
 
-        WebElement sendComment = driver.findElement(By.id("sendComment"));
-        sendComment.click();
+        chromeDriverUtil.findAndClickElementById(driver, "sendComment");
 
         chromeDriverUtil.quitFromDriver(driver);
     }
@@ -56,14 +52,11 @@ public class CommentTest {
     public void editCorrectComment() throws InterruptedException {
         ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
 
-        WebElement editComment = driver.findElement(By.id("editComment"));
-        editComment.click();
+        chromeDriverUtil.findAndClickElementById(driver, "editComment");
 
-        WebElement commentFrom = driver.findElement(By.id("commentFrom"));
-        commentFrom.sendKeys("Selenium test comment edit!");
+        chromeDriverUtil.findAndSendElementById(driver, "commentForm", "Selenium test comment edit!");
 
-        WebElement sendComment = driver.findElement(By.id("sendComment"));
-        sendComment.click();
+        chromeDriverUtil.findAndClickElementById(driver, "sendComment");
 
         chromeDriverUtil.quitFromDriver(driver);
     }
@@ -72,14 +65,11 @@ public class CommentTest {
     public void editEmptyComment() throws InterruptedException {
         ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
 
-        WebElement editComment = driver.findElement(By.id("editComment"));
-        editComment.click();
+        chromeDriverUtil.findAndClickElementById(driver, "editComment");
 
-        WebElement commentFrom = driver.findElement(By.id("commentFrom"));
-        commentFrom.sendKeys("");
+        chromeDriverUtil.findAndSendElementById(driver, "commentForm", "");
 
-        WebElement sendComment = driver.findElement(By.id("sendComment"));
-        sendComment.click();
+        chromeDriverUtil.findAndClickElementById(driver, "sendComment");
 
         chromeDriverUtil.quitFromDriver(driver);
     }
@@ -88,15 +78,18 @@ public class CommentTest {
     public void editOverlongComment() throws InterruptedException {
         ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
 
-        WebElement editComment = driver.findElement(By.id("editComment"));
-        editComment.click();
+        chromeDriverUtil.findAndClickElementById(driver, "editComment");
 
         WebElement commentFrom = driver.findElement(By.id("commentFrom"));
         commentFrom.sendKeys("Selenium test comment edit Selenium test comment edit Selenium test comment " +
                 "edit! Selenium test comment edit!");
 
-        WebElement sendComment = driver.findElement(By.id("sendComment"));
-        sendComment.click();
+        chromeDriverUtil.findAndSendElementById(driver, "commentForm", "Selenium test comment edit" +
+                " Selenium test comment edit " +
+                " Selenium test comment edit!" +
+                " Selenium test comment edit!");
+
+        chromeDriverUtil.findAndClickElementById(driver, "sendComment");
 
         chromeDriverUtil.quitFromDriver(driver);
     }
@@ -105,8 +98,7 @@ public class CommentTest {
     public void deleteComment() throws InterruptedException {
         ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
 
-        WebElement deleteComment = driver.findElement(By.id("deleteComment"));
-        deleteComment.click();
+        chromeDriverUtil.findAndClickElementById(driver, "deleteComment");
 
         chromeDriverUtil.quitFromDriver(driver);
     }
