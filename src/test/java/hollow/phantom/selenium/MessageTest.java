@@ -36,8 +36,7 @@ public class MessageTest {
     public void sendSpecialSymbolsMessage() throws InterruptedException {
         ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
 
-        char uniChar = '\u039A';
-        chromeDriverUtil.findAndSendElementById(driver, "messageForm", uniChar + " - omega");
+        chromeDriverUtil.findAndSendElementById(driver, "messageForm", '\u039A' + " - omega");
 
         chromeDriverUtil.findAndClickElementById(driver, "sendMessage");
 

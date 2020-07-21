@@ -38,8 +38,7 @@ public class CommentTest {
     public void sendSpecialSymbolsComment() throws InterruptedException {
         ChromeDriver driver = chromeDriverUtil.initializeChromeDriver();
 
-        char uniChar = '\u038A';
-        chromeDriverUtil.findAndSendElementById(driver, "commentForm", uniChar + " - alpha");
+        chromeDriverUtil.findAndSendElementById(driver, "commentForm", '\u00A7' + " - &");
 
         chromeDriverUtil.findAndClickElementById(driver, "sendComment");
 
